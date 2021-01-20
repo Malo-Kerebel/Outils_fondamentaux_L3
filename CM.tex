@@ -6,6 +6,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+
 \author{Malo Kerebel}
 
 \usepackage{systeme}
@@ -161,8 +162,8 @@ On note \(\delta\) la distribution de dirac en 0 définie par :
 \]
 
 \begin{enumerate}
-	\item On a bien une application de \(\mathbb{D} \text{dans} \mathbb{R}\)
-	\item Linéarité : \(\langle \delta, \	alpha_1 \varphi_1 + 	alpha_2 \varphi_2 \rangle = \alpha_1 \langle \delta, \varphi_1 \rangle + \alpha_2 \langle \delta, \varphi_2 \rangle\)
+	\item On a bien une application de \(\mathbb{D} \text{ dans } \mathbb{R}\)
+	\item Linéarité : \(\langle \delta, \alpha_1 \varphi_1 + 	\alpha_2 \varphi_2 \rangle = \alpha_1 \langle \delta, \varphi_1 \rangle + \alpha_2 \langle \delta, \varphi_2 \rangle\)
 	\item Continuité \(\varphi_n \rightarrow \varphi\)\\
 	\(\langle \delta, \varphi_n \rangle = \varphi_n (0) \rightarrow \varphi(0) = \langle \delta, \varphi \rangle\) donc c'est bien continu 
 \end{enumerate}
@@ -189,10 +190,10 @@ On note \(\delta\) la distribution de dirac en 0 définie par :
 
 Si \(T_1, T_2 \in \ens{D}\) :
 \[
-	\langle T_1 + T_2, \varphi \rangle = \langle T_1, \varphi \rangle + \langle T_2, \varphi \rangle \forall \varphi \in \ens{D}
+	\langle T_1 + T_2, \varphi \rangle = \langle T_1, \varphi \rangle + \langle T_2, \varphi \rangle \quad \forall \varphi \in \ens{D}
 \]Similaire au fonctionnement d'une intégrale
 
-Si \(T \in \ens{D}' \text{et} \alpha \in \ens{R}\)
+Si \(T \in \ens{D}' \text{ et } \alpha \in \ens{R}\)
 \[
 	\langle \alpha T, \varphi \rangle = \alpha \langle T, \varphi \rangle
 \]
@@ -206,16 +207,16 @@ Si \(T \in \ens{D}' \text{et} \alpha \in \ens{R}\)
 \]
 \paragraph{Définition 1.7.} Distribution nulle
 \[
-	T = 0 \text{dans} \ens{D}' \Leftrightarrow \langle \alpha T, \varphi \rangle = 0\quad \forall \varphi \in \ens{D}
+	T = 0 \text{ dans } \ens{D}' \Leftrightarrow \langle \alpha T, \varphi \rangle = 0\quad \forall \varphi \in \ens{D}
 \]
 
 \paragraph{Définition 1.8.} Égalité dans \(\ens{D}'\)
 \[
-	T_1 = T_2 text{dans} \ens{D}' \Leftrightarrow T_1 - T_2 = 0 \text{dans} \ens{D}'
+	T_1 = T_2 \text{ dans } \ens{D}' \Leftrightarrow T_1 - T_2 = 0 \text{ dans } \ens{D}'
 \]
 C'est à dire :
 \[
-	T_1 = T_2 \text{dans} \ens{D}' \Leftrightarrow \langle \alpha T_1 - T_2, \varphi \rangle = 0\quad \forall \varphi \in \ens{D}
+	T_1 = T_2 \text{ dans } \ens{D}' \Leftrightarrow \langle \alpha T_1 - T_2, \varphi \rangle = 0\quad \forall \varphi \in \ens{D}
 \]
 
 \paragraph{Théorème 1.2.} (\(\ens{D}',+, \cdot, 0\) est un espace vectoriel de dimension infinie
@@ -235,7 +236,7 @@ La distribution \(\delta\) est par exemple singulière, tandis que \(T : \varphi
 \paragraph{Remarques :}
 \begin{enumerate}
 	\item Toute fonction de \(L^1_{loc}(\ens{R}\) définit une distribution (régulière)
-	\item Par abus de langage on pourra dire "Soit \(f \in L^1_{loc} (\ens{R}) une distribution\)"
+	\item Par abus de langage on pourra dire "Soit \(f \in L^1_{loc} (\ens{R})\) une distribution"
 	\item Inversement, par abus on pourra dire aussi \(T(x) \text{avec} T \in \ens(D)'\)
 	\item On ne peut pas définir le produit entre deux distributions quelconques, la théorie des distributions ne s'applique qu'à des problèmes linéaires. En particulier les équations différentielles ordinaires (E.D.O) linéaire
 \end{enumerate}
@@ -253,7 +254,7 @@ Si \(f \in C^{\infty}(\ens{R} \) et \(T\in \ens{D}'\) on peut définir la distri
 Pour définir \(\cos \cdot delta\) il faut trouver la valeur de \(\langle \cos \cdot \delta, \varphi \rangle\)
 \begin{align*}
 	\langle \cos \cdot \delta, \varphi \rangle &= \langle \delta, \cos \varphi \rangle\\
-	&= (\cos cdot \cdot \varphi)(0)\\
+	&= (\cos \cdot \varphi)(0)\\
 	&= \cos(0) \cdot \varphi(0)\\
 	&= \varphi (0)\\
 	&= \langle \delta, \varphi \rangle
