@@ -349,4 +349,104 @@ Si \(T \in \ens{D}'\) et \(a \in \ens{R}\), on définit \(\tau_a T \in \ens{D}'\
 	&= \varphi(a)\\
 	&= \langle \delta_a, \varphi \rangle
 \end{align*}
+
+\subsection{Dilatation}
+
+\paragraph{Définition 1.17.} (Rappel) Dilatation des fonctions
+
+Si f est une fonction et \(\lambda \in \ens{R^*}\), on définit \(d_\lambda f\) dilatée de \(\lambda\) de la fonction g par :
+\[
+	d_\lambda f (x) = f(\dfrac{x}{\lambda}) 
+\]
+
+On établit une formule pour \(d_\lambda T, T \in \ens{D'}\), lorsque T est régulière
+\begin{align*}
+	\langle d_\lambda [f], \varphi \rangle &= \langle \left[d_\lambda f\right], \varphi \rangle\\
+	&= \int_{\ens{R}} d_\lambda f(x) \varphi(x) dx\\
+	&= \int_{\ens{R}} f(\dfrac{x}{\lambda} \varphi(x) dx\\
+	& \text{On fait un changement de variable, } y= \dfrac{x}{\lambda}, x = \lambda y, J = \lambda\\
+	&= \int_{\ens{R}} f(y) \varphi (\lambda y) \vert \lambda \vert dy\\
+	&= \int_{\ens{R}} f(y) d_{\frac{1}{\lambda}}\varphi (y) \vert \lambda \vert dy\\
+	&= \langle [f], \vert \lambda \vert d_{\frac{1}{\lambda}} \varphi \rangle
+\end{align*}
+
+\paragraph{Définition 1.18} Dilatation dans \(\ens{D'}\)
+
+Si \(T \in \ens{D'}\) et \(\lambda \in \ens{R^*}\), on définit \(d_\lambda T \in \ens{D'}\) la dilaté de la distribution T par :
+\[
+	\langle d_\lambda T, \varphi \rangle = \langle [f], \vert \lambda \vert d_{\frac{1}{\lambda}} \varphi \rangle = \langle [f], \vert \lambda \vert \varphi (\lambda x) \rangle 
+\]
+
+\paragraph{Exemple : } \(\delta_0 = \delta\)
+\[
+	\langle \delta, \varphi \rangle = \varphi(0)
+\]
+On cherche \(\delta_{-3}\)
+\begin{align*}
+	\langle \delta_{-3}, \varphi \rangle &=_{def} \langle [f], \vert -3 \vert d_{\frac{-1}{3}} \varphi \rangle\\
+	&= \langle [f], 3 \varphi(-3x) \rangle\\
+	&= 3 \varphi (-3 \times 0) = 3 \varphi (0)\\
+	&= 3 \langle \delta, \varphi \rangle = \langle 3\delta, \varphi \rangle 
+\end{align*}
+
+Donc \(\delta_{-3} = 3\delta\) 
+
+\paragraph{Définition 1.19} Parité dans \(\ens{D'}\)
+
+T est une distribution paire \(\Leftrightarrow d_{-1} T = T\)
+T est une distribution impaire \(Leftrightarrow d_{-1} T = -T\)
+
+\paragraph{Exemple} distribution régulière impaire
+
+Soit [x] régulière associé à la fonction (\(x \rightarrow x\)). Cette fonction est impaire. Montrons que la distribution [x] est impaire dans \(\ens{D'}\)
+
+Remarque \([x] \in \ens{D'}\) existe.
+
+\begin{align*}
+	\langle d_{-1} [x], \varphi \rangle &= \langle [x],\vert -1 \vert d_{-1} \varphi \rangle = \langle [x], \varphi(-x) \rangle\\
+	&= \int_{\ens{R}} x \varphi(-x) dx\\
+	&= \int_{\ens{R}} -y \varphi(y) dy\\
+	&= - \int_{\ens{R}} y \varphi(y) dy = - \langle [x], \varphi \rangle = \langle -[x], \varphi \rangle\\
+\end{align*}
+
+On retiendra qu'une distribution régulière associé à une fonction paire (ou impaire) est paire (ou impaire).
+
+\paragraph{Définition 1.20.} Périodicité dans \(\ens{D'}\)
+
+Si \(T \in \ens{D'}\), \(T\) est dite périodique de période a si :
+\[
+	\tau_a T = T
+\]
+
+Toutes distribution régulière associé à une fonction périodique est périodique.
+
+\subsection{Convergence dans \(\ens{D'}\)}
+
+\paragraph{Définition 1.21.} Convergence dans \(\ens{D'}\)
+
+Soit \((T_n)_{n\in\ens{N}}\) une suite de distribution dans \(\ens{D'}\).
+
+On dit que \(T_n\) converge vers T dans \(\ens{D'}\) et on notera \(\underset{n \rightarrow +\infty}{\lim} T_n = T\) ou \(T_n \underset{n \rightarrow +\infty}{\rightarrow} T\) si :
+\[
+	\langle T_n, \varphi \rangle \underset{n \rightarrow +\infty}{\rightarrow} \langle T, \varphi \rangle
+\]
+
+\paragraph{Exemple 1} Dirac peut s'obtenir par la limite d'une suite de distribution :
+\[
+	f_n(t) = \left\{
+    \begin{array}{ll}
+        n & \mbox{si } t \in [-\frac{1}{2n}, \frac{1}{2n}] \\
+        0 & \mbox{sinon.}
+    \end{array}
+\right.
+\]
+Mais au sens des distributions on va montrer que \([f_n] \underset{n \rightarrow +\infty}{\rightarrow} \delta\)
+\[
+	\langle [f_n], \varphi \rangle = \int_{\ens{R}} f_n(x) \varphi(x) dx = n \int_{-\frac{1}{2n}}^{\frac{1}{2n}} \varphi(x) dx
+\]
+
+\[
+	\langle [f_n], \varphi \rangle = n \left[ \Phi \right]_{-\frac{1}{2n}}^{\frac{1}{2n}} = \underset{n \rightarrow +\infty}{\rightarrow} \Phi' (0)
+\]
+
 \end{document}
