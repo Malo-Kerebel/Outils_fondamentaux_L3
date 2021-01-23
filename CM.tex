@@ -10,6 +10,8 @@
 
 \usepackage{systeme}
 
+\usepackage[mathscr]{euscript}
+
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -20,7 +22,8 @@
 
 \newcommand{\Ens}[1]{\mathbb{#1}}
 \newcommand{\ens}[1]{\mathbb{#1}}
-\newcommand{\fphi}{\quad \forall \varphi \in \mathbb{D}}
+\newcommand{\fphi}{\quad \forall \varphi \in \mathcal{D}}
+\newcommand{\D}{\ensuremath{\mathcal{D}}}
 
 \input cyracc.def
 \font\tencyr=wncysc10
@@ -101,9 +104,9 @@ Dirac a donc créer la distribution de dirac \(\delta_a\)
 
 Toute la théorie des distribution va donc venir de la définitons de ces fonction $\varphi$, les fonctions test.
 
-\section{L'espace D des fonctions test}
+\section{L'espace \D des fonctions test}
 
-\paragraph{Définition 1.1.} L'espace D\\
+\paragraph{Définition 1.1.} L'espace \D\\
 Ces fonctions sont indéfiniment dérivable $C^\infty$ et à support borné, elle sont nulles en dehors d'un intervalle [a,b] ensuite elles sont lisses entre a et b
 
 \paragraph{Définition 1.2.} Support d'une fonction\\
@@ -119,7 +122,7 @@ Exemples : \par
 
 On doit vérifier que les dérivé sont bien nulle en -1 ou 1 (la fonction est paire donc ça ne change rien)
 
-On peut toujours trouver des fonction \(\varphi \in \mathbb{D}\) de support [c,d] et telle que \(\varphi = 1\) sur [a,b], où \(c < a < b < d \in \mathbb{R}\)
+On peut toujours trouver des fonction \(\varphi \in \D\) de support [c,d] et telle que \(\varphi = 1\) sur [a,b], où \(c < a < b < d \in \mathbb{R}\)
 
 De même si au lieu de \(\varphi = 1\) on a \(\varphi = f\), où \(f \in C^{\infty}\)
 
@@ -130,25 +133,25 @@ Ex :  \[\text{1) } \psi_a (x) = \varphi_s \left(\frac{x}{a}\right) \times \frac{
 
 Pour \(\varphi = f\) on multiplus juste la fonction pour \(\varphi = 1\) par f.
 
-\paragraph{Définition 1.3.} Convergence dans \(\mathbb{D}\)\\
-\(\phi_n \rightarrow \phi\) dans \(\mathbb{D}\) si et seulement si il existe K inclus dans R borné, telq ue le support de \(\phi_n\) est inclus dans \(\mathbb{K}\) \(\forall n\) et le support de \(\phi\) est inclus dans \(\mathbb{K}\) ainsi que \(\varphi_n^{(\alpha} \rightarrow \varphi^{(\alpha}\) uniformement \(\forall \alpha \in \mathbb{N}\)
+\paragraph{Définition 1.3.} Convergence dans \(\D\)\\
+\(\phi_n \rightarrow \phi\) dans \D si et seulement si il existe K inclus dans R borné, tel que le support de \(\phi_n\) est inclus dans \(\mathbb{K}\) \(\forall n\) et le support de \(\phi\) est inclus dans \(\mathbb{K}\) ainsi que \(\varphi_n^{(\alpha} \rightarrow \varphi^{(\alpha}\) uniformement \(\forall \alpha \in \mathbb{N}\)
 
 \paragraph{Propriétés 1.1.}
 \begin{enumerate}
-	\item Si \(\varphi \in \mathbb{D}\) et f est une fonction à support borné, alors : \(\varphi * f \in \mathbb{D}\)
-	\item \(\forall f L^1_loc(\mathbb{R})\) (localement sommable, c'est à dire sommable sur tout intervalle borné de \(\mathbb{R}\)), \(\forall \varphi \in \mathbb{D}\) :\quad \(f\cdot \varphi \in L^1(\mathbb{R})\)
+	\item Si \(\varphi \in \D\) et f est une fonction à support borné, alors : \(\varphi * f \in \D\)
+	\item \(\forall f L^1_loc(\mathbb{R})\) (localement sommable, c'est à dire sommable sur tout intervalle borné de \(\mathbb{R}\)), \(\forall \varphi \in \D\) :\quad \(f\cdot \varphi \in L^1(\mathbb{R})\)
 	\item Si f et g sont des fonctions \(L^1_{loc}\):
 	\[
-		f =_{pp} g \Leftrightarrow \int_{\mathbb{R}} f(x) \varphi(x) dx = \int_{\mathbb{R}} g(x)  \varphi(x) dx \forall \varphi \in \mathbb{D}
+		f =_{pp} g \Leftrightarrow \int_{\mathbb{R}} f(x) \varphi(x) dx = \int_{\mathbb{R}} g(x)  \varphi(x) dx \forall \varphi \in \D
 	\]
 	Ce qui revient à dire que toute fonction \(d \in L^1_{loc}\)
 \end{enumerate}
 
-\section{L'espace D' des distributions}
+\section{L'espace \D' des distributions}
 
 \paragraph{Définition 1.4.} Distributions
 Une distributions T est une application linéaire continue de \(\mathbb{D}\) dans \(\mathbb{R}\).
-On note D' l'ensemble des distributions. D' est aussi appelé espace dual de D.
+On note \D' l'ensemble des distributions. \D' est aussi appelé espace dual de \D.
 
 \textbf{Exemples :}
 
@@ -157,24 +160,24 @@ On note D' l'ensemble des distributions. D' est aussi appelé espace dual de D.
 
 On note \(\delta\) la distribution de dirac en 0 définie par :
 \[
-	\langle \delta, \varphi \rangle = \varphi(0) \forall \varphi \in \mathbb{D}
+	\langle \delta, \varphi \rangle = \varphi(0) \forall \varphi \in \D
 \]
 
 \begin{enumerate}
-	\item On a bien une application de \(\mathbb{D} \text{ dans } \mathbb{R}\)
+	\item On a bien une application de \(\D \text{ dans } \mathbb{R}\)
 	\item Linéarité : \(\langle \delta, \alpha_1 \varphi_1 + 	\alpha_2 \varphi_2 \rangle = \alpha_1 \langle \delta, \varphi_1 \rangle + \alpha_2 \langle \delta, \varphi_2 \rangle\)
 	\item Continuité \(\varphi_n \rightarrow \varphi\)\\
 	\(\langle \delta, \varphi_n \rangle = \varphi_n (0) \rightarrow \varphi(0) = \langle \delta, \varphi \rangle\) donc c'est bien continu 
 \end{enumerate}
 
-\paragraph{2.} L'application suivante est aussi une distribution de \(\Ens{D}'\) :
+\paragraph{2.} L'application suivante est aussi une distribution de \D' :
 \[
 	T : \varphi \rightarrow \int_{\Ens{R}} \varphi(x) dx
 \]
 \begin{enumerate}
-	\item L'intégrale donne bien un réelle donc c'est bien une application de \(\Ens{D}\) dans \(\Ens{R}\)
+	\item L'intégrale donne bien un réelle donc c'est bien une application de \(\D\) dans \(\Ens{R}\)
 	\item L'intégrale est linéaire donc cette application est linéaire aussi
-	\item Soit \(\varphi_n \rightarrow \varphi\) dans \(\Ens{D}\)
+	\item Soit \(\varphi_n \rightarrow \varphi\) dans \D
 	\[
 		\lim_{n \rightarrow +\infty} \langle T, \varphi_n \rangle = \lim_{n \rightarrow +\infty} \int_{\ens{R}} \varphi_n (x) dx = \int_{\ens{R}} \lim_{n \rightarrow +\infty} \varphi (x) dx = \int_{\ens{R}} \varphi(x) dx
 	\]
@@ -187,44 +190,44 @@ On note \(\delta\) la distribution de dirac en 0 définie par :
 
 \paragraph{1.6.} Somme et multiplication par un scalaire :
 
-Si \(T_1, T_2 \in \ens{D}\) :
+Si \(T_1, T_2 \in \D\) :
 \[
-	\langle T_1 + T_2, \varphi \rangle = \langle T_1, \varphi \rangle + \langle T_2, \varphi \rangle \quad \forall \varphi \in \ens{D}
+	\langle T_1 + T_2, \varphi \rangle = \langle T_1, \varphi \rangle + \langle T_2, \varphi \rangle \quad \forall \varphi \in \D
 \]Similaire au fonctionnement d'une intégrale
 
-Si \(T \in \ens{D}' \text{ et } \alpha \in \ens{R}\)
+Si \(T \in \D' \text{ et } \alpha \in \ens{R}\)
 \[
 	\langle \alpha T, \varphi \rangle = \alpha \langle T, \varphi \rangle
 \]
 
 \paragraph{Exemple :} \(\delta + \delta = 2\delta\)
 \[
-	\langle \delta + \delta, \varphi \rangle = \langle \delta, \varphi \rangle + \langle \delta, \varphi \rangle = 2 \langle \delta, \varphi \rangle =  \langle 2\delta, \varphi \rangle \quad \forall \varphi \in \ens{D}
+	\langle \delta + \delta, \varphi \rangle = \langle \delta, \varphi \rangle + \langle \delta, \varphi \rangle = 2 \langle \delta, \varphi \rangle =  \langle 2\delta, \varphi \rangle \quad \forall \varphi \in \D
 \]
 \[
 	\langle \delta + \delta, \varphi \rangle = 2 \varphi(0)
 \]
 \paragraph{Définition 1.7.} Distribution nulle
 \[
-	T = 0 \text{ dans } \ens{D}' \Leftrightarrow \langle \alpha T, \varphi \rangle = 0\quad \forall \varphi \in \ens{D}
+	T = 0 \text{ dans } \D' \Leftrightarrow \langle \alpha T, \varphi \rangle = 0\quad \forall \varphi \in \D
 \]
 
-\paragraph{Définition 1.8.} Égalité dans \(\ens{D}'\)
+\paragraph{Définition 1.8.} Égalité dans \D'
 \[
-	T_1 = T_2 \text{ dans } \ens{D}' \Leftrightarrow T_1 - T_2 = 0 \text{ dans } \ens{D}'
+	T_1 = T_2 \text{ dans } \D' \Leftrightarrow T_1 - T_2 = 0 \text{ dans } \D'
 \]
 C'est à dire :
 \[
-	T_1 = T_2 \text{ dans } \ens{D}' \Leftrightarrow \langle \alpha T_1 - T_2, \varphi \rangle = 0\quad \forall \varphi \in \ens{D}
+	T_1 = T_2 \text{ dans } \D' \Leftrightarrow \langle \alpha T_1 - T_2, \varphi \rangle = 0\quad \forall \varphi \in \D
 \]
 
-\paragraph{Théorème 1.2.} (\(\ens{D}',+, \cdot, 0\) est un espace vectoriel de dimension infinie
+\paragraph{Théorème 1.2.} (\(\D',+, \cdot, 0\) est un espace vectoriel de dimension infinie
 
 \paragraph{Définition 1.9.} Distributions régulières et singulières
 \begin{enumerate}
 	\item On appelle distribution régulière un distribution que l'on peut définir à partir d'une fonction f de façon :
 	\[
-		\langle T_f, \varphi \rangle = \int_{\ens{R}} f(x) \varphi{x} dx \quad \forall \varphi \in \ens{D}
+		\langle T_f, \varphi \rangle = \int_{\ens{R}} f(x) \varphi{x} dx \quad \forall \varphi \in \D
 	\]
 	C'est équivalent au produit scalaire de f par \(\varphi\), on notera \(T_f\) ou \([f]\)
 	\item Toutes les autres distributions sont singulières
@@ -242,14 +245,14 @@ La distribution \(\delta\) est par exemple singulière, tandis que \(T : \varphi
 
 \paragraph{Définition 1.10.} Multiplication par une fonction \(C^{\infty}\)
 
-Si \(f \in C^{\infty}(\ens{R} \) et \(T\in \ens{D}'\) on peut définir la distribution \(f\cdot T \in ens{D}'\) par :
+Si \(f \in C^{\infty}(\ens{R} \) et \(T\in \D'\) on peut définir la distribution \(f\cdot T \in ens{D}'\) par :
 \[
-	\langle f\cdot T, \varphi \rangle = \langle T, f\cdot \varphi \rangle \quad \forall \varphi \in \ens{D}
+	\langle f\cdot T, \varphi \rangle = \langle T, f\cdot \varphi \rangle \quad \forall \varphi \in \D
 \]
 
 \paragraph{Exemple :} \(\cos \cdot \delta\)
 
-\(cos \in C^{\infty}\) et \(\delta \in \ens{D}'\)
+\(cos \in C^{\infty}\) et \(\delta \in \D'\)
 Pour définir \(\cos \cdot delta\) il faut trouver la valeur de \(\langle \cos \cdot \delta, \varphi \rangle\)
 \begin{align*}
 	\langle \cos \cdot \delta, \varphi \rangle &= \langle \delta, \cos \varphi \rangle\\
@@ -282,7 +285,7 @@ Les fonction \(L^1_{loc}\) sont les plus utilisées :
 	\item Et beaucoup d'autre fonctions : \(f = |vert \cos \vert, f = ln |vert x \vert\)
 \end{enumerate}
 
-\(f =_{pp} g\) dans \(L^1_{loc} \Leftrightarrow T_f = T_g\) dans \(\ens{D}'\)
+\(f =_{pp} g\) dans \(L^1_{loc} \Leftrightarrow T_f = T_g\) dans \D'
 
 \paragraph{2. Distributions singulières}
 
@@ -310,7 +313,7 @@ On définit la distrtibution Partie finie de \(1/x^2\) notée Pf(\(\frac{1}{x^2}
 	\langle Pf(\frac{1}{x^2}, \varphi \rangle = \lim_{\epsilon \rightarrow 0^+} \int_{\vert x \vert > \epsilon} \dfrac{\varphi(x)}{x^2}dx \fphi
 \]
 
-\section{Opérations et propriétés élémentaires dans \(\ens{D}'\)}
+\section{Opérations et propriétés élémentaires dans \D'}
 
 \subsection{Translation}
 \paragraph{Définition 1.14.} (Rappel) Translations des fonctions
@@ -320,7 +323,7 @@ Si f est une fonction, on définit \(\tau_af\) translaté de a de la fonction f 
 	\tau_af = f(x - a)
 \]
 
-Comment définir \(\tau_a T\) si \(T \in \ens{D}'\) et T quelconque ?
+Comment définir \(\tau_a T\) si \(T \in \D'\) et T quelconque ?
 
 \[
 	\langle \tau_a [f], \varphi \rangle = \langle [\tau_a f], \varphi \rangle = \int_{\ens{R}} \tau_a f(x) \varphi(x) dx
@@ -336,9 +339,9 @@ Comment définir \(\tau_a T\) si \(T \in \ens{D}'\) et T quelconque ?
 \textbf{CM3 (2021-01-21)}
 \end{center}
 
-\paragraph{Définition 1.16.} Translation dans \(\ens{D}'\)
+\paragraph{Définition 1.16.} Translation dans \D'
 
-Si \(T \in \ens{D}'\) et \(a \in \ens{R}\), on définit \(\tau_a T \in \ens{D}'\) :
+Si \(T \in \D'\) et \(a \in \ens{R}\), on définit \(\tau_a T \in \D'\) :
 \[
 	\langle \tau_a T, \varphi \rangle = \langle T, \tau_{-a} \varphi \rangle = \langle T, \varphi(x+a) \rangle
 \]
@@ -363,7 +366,7 @@ Si f est une fonction et \(\lambda \in \ens{R^*}\), on définit \(d_\lambda f\) 
 	d_\lambda f (x) = f(\dfrac{x}{\lambda}) 
 \]
 
-On établit une formule pour \(d_\lambda T, T \in \ens{D'}\), lorsque T est régulière
+On établit une formule pour \(d_\lambda T, T \in \D'\), lorsque T est régulière
 \begin{align*}
 	\langle d_\lambda [f], \varphi \rangle &= \langle \left[d_\lambda f\right], \varphi \rangle\\
 	&= \int_{\ens{R}} d_\lambda f(x) \varphi(x) dx\\
@@ -374,9 +377,9 @@ On établit une formule pour \(d_\lambda T, T \in \ens{D'}\), lorsque T est rég
 	&= \langle [f], \vert \lambda \vert d_{\frac{1}{\lambda}} \varphi \rangle
 \end{align*}
 
-\paragraph{Définition 1.18} Dilatation dans \(\ens{D'}\)
+\paragraph{Définition 1.18} Dilatation dans \D'
 
-Si \(T \in \ens{D'}\) et \(\lambda \in \ens{R^*}\), on définit \(d_\lambda T \in \ens{D'}\) la dilaté de la distribution T par :
+Si \(T \in \D'\) et \(\lambda \in \ens{R^*}\), on définit \(d_\lambda T \in \D'\) la dilaté de la distribution T par :
 \[
 	\langle d_\lambda T, \varphi \rangle = \langle [f], \vert \lambda \vert d_{\frac{1}{\lambda}} \varphi \rangle = \langle [f], \vert \lambda \vert \varphi (\lambda x) \rangle 
 \]
@@ -395,16 +398,16 @@ On cherche \(\delta_{-3}\)
 
 Donc \(\delta_{-3} = 3\delta\) 
 
-\paragraph{Définition 1.19} Parité dans \(\ens{D'}\)
+\paragraph{Définition 1.19} Parité dans \D'
 
 T est une distribution paire \(\Leftrightarrow d_{-1} T = T\)
 T est une distribution impaire \(Leftrightarrow d_{-1} T = -T\)
 
 \paragraph{Exemple} distribution régulière impaire
 
-Soit [x] régulière associé à la fonction (\(x \rightarrow x\)). Cette fonction est impaire. Montrons que la distribution [x] est impaire dans \(\ens{D'}\)
+Soit [x] régulière associé à la fonction (\(x \rightarrow x\)). Cette fonction est impaire. Montrons que la distribution [x] est impaire dans \D'
 
-Remarque \([x] \in \ens{D'}\) existe.
+Remarque \([x] \in \D'\) existe.
 
 \begin{align*}
 	\langle d_{-1} [x], \varphi \rangle &= \langle [x],\vert -1 \vert d_{-1} \varphi \rangle = \langle [x], \varphi(-x) \rangle\\
@@ -415,22 +418,22 @@ Remarque \([x] \in \ens{D'}\) existe.
 
 On retiendra qu'une distribution régulière associé à une fonction paire (ou impaire) est paire (ou impaire).
 
-\paragraph{Définition 1.20.} Périodicité dans \(\ens{D'}\)
+\paragraph{Définition 1.20.} Périodicité dans \D'
 
-Si \(T \in \ens{D'}\), \(T\) est dite périodique de période a si :
+Si \(T \in \D'\), \(T\) est dite périodique de période a si :
 \[
 	\tau_a T = T
 \]
 
 Toutes distribution régulière associé à une fonction périodique est périodique.
 
-\subsection{Convergence dans \(\ens{D'}\)}
+\subsection{Convergence dans \D'}
 
-\paragraph{Définition 1.21.} Convergence dans \(\ens{D'}\)
+\paragraph{Définition 1.21.} Convergence dans \D'
 
-Soit \((T_n)_{n\in\ens{N}}\) une suite de distribution dans \(\ens{D'}\).
+Soit \((T_n)_{n\in\ens{N}}\) une suite de distribution dans \D'.
 
-On dit que \(T_n\) converge vers T dans \(\ens{D'}\) et on notera \(\underset{n \rightarrow +\infty}{\lim} T_n = T\) ou \(T_n \underset{n \rightarrow +\infty}{\rightarrow} T\) si :
+On dit que \(T_n\) converge vers T dans \D' et on notera \(\underset{n \rightarrow +\infty}{\lim} T_n = T\) ou \(T_n \underset{n \rightarrow +\infty}{\rightarrow} T\) si :
 \[
 	\langle T_n, \varphi \rangle \underset{n \rightarrow +\infty}{\rightarrow} \langle T, \varphi \rangle
 \]
