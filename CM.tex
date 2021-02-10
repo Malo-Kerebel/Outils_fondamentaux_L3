@@ -78,12 +78,19 @@ On représente l'énergie par une fonction f telle que:
 	\int_{\mathbb{R}} f(t) dt = E \text{fini}
 \]
 \[
-	f(t) = 0 \forall t \in \mathbb{R}^*
+	f(t) = 0 \quad \forall t \in \mathbb{R}^*
 \]
 La théorie de l'intégration nous dirait que l'intégrale est nulle
 
 On peut tenter un passage à la limite :\\
-\(f_n(t) \systeme{n \text{si } t \in [ \tfrac{-1}{2n} \tfrac{1}{2n} ],0 \text{ sinon} }\)
+\(f_n(t) \systeme{n \text{ si } t \in [ \tfrac{-1}{2n} \tfrac{1}{2n} ],0 \text{ sinon} }\)
+
+\(f_n(t) = \left \{
+   \begin{array}{r c}
+      n \quad &\text{ si } t \in [ \tfrac{-1}{2n}, \tfrac{1}{2n} ] \\
+      0 \quad &\text{ sinon}
+   \end{array}
+   \right .\)
 
 \textbf{Exemple 2} Potentiel électrostatique.
 Distribution de charge continue : V(r) = k 
@@ -310,7 +317,7 @@ On définit la distribution valeur principale de \(1/x\) notée \(Vp(\frac{1}{x}
 
 On définit la distrtibution Partie finie de \(1/x^2\) notée Pf(\(\frac{1}{x^2}\) par :
 \[
-	\langle Pf(\frac{1}{x^2}, \varphi \rangle = \lim_{\epsilon \rightarrow 0^+} \int_{\vert x \vert > \epsilon} \dfrac{\varphi(x)}{x^2}dx \fphi
+	\langle Pf\left(\frac{1}{x^2}\right), \varphi \rangle = \lim_{\epsilon \rightarrow 0^+} \int_{\vert x \vert > \epsilon} \dfrac{\varphi(x)}{x^2}dx \fphi
 \]
 
 \section{Opérations et propriétés élémentaires dans \D'}
@@ -346,7 +353,7 @@ Si \(T \in \D'\) et \(a \in \ens{R}\), on définit \(\tau_a T \in \D'\) :
 	\langle \tau_a T, \varphi \rangle = \langle T, \tau_{-a} \varphi \rangle = \langle T, \varphi(x+a) \rangle
 \]
 
-\paragraph{Exemple :} \(\tau_a delta\)
+\paragraph{Exemple :} \(\tau_a \delta\)
 \[
 	\langle \delta, \varphi \rangle = \varphi(0)
 \]
@@ -401,7 +408,7 @@ Donc \(\delta_{-3} = 3\delta\)
 \paragraph{Définition 1.19} Parité dans \D'
 
 T est une distribution paire \(\Leftrightarrow d_{-1} T = T\)
-T est une distribution impaire \(Leftrightarrow d_{-1} T = -T\)
+T est une distribution impaire \(\Leftrightarrow d_{-1} T = -T\)
 
 \paragraph{Exemple} distribution régulière impaire
 
@@ -456,8 +463,52 @@ Mais au sens des distributions on va montrer que \([f_n] \underset{n \rightarrow
 	\langle [f_n], \varphi \rangle = n \left[ \Phi \right]_{-\frac{1}{2n}}^{\frac{1}{2n}} = \underset{n \rightarrow +\infty}{\rightarrow} \Phi' (0)
 \]
 
+\chapter{Dérivation des distributions}
+
 \begin{center}
-\textbf{CM4 (2021-01-2x)}
+\textbf{CM4 (2021-02-10)}
 \end{center}
+
+\section{Introduction}
+
+On prend l'exemple d'une balle qui fait un choc dur avec un mur, passant instantanemment d'une vitesse \(v_0\) à \(-v_0\), avec des fonctions ce n'est pas descriptible, ici on n'a pas v(t) une fonction mais on a \(v(t) = -v_0 sgn(t)\) une distribution.
+On va montrer que \(sgn' = 2\delta\)
+
+\section{Dérivée des distributions}
+
+Comme d'habitude, pour définir la dérivée d'une distribution on va se servir de ce qu'on sait faire avec les fonction : si [f] est une distribution régulière associée à une fonction dérivable partout, on va faire en sorte que \([f]' = [f']\) et établir une formule générale de dérivation. Si on veut que \([f]' = [f']\), alors, si \(\varphi \in \D\) :
+
+\begin{align*}
+	\langle [f]', \varphi \rangle &= \langle [f'], \varphi \rangle\\
+	&= \int_\ens{E} f'(x) \varphi(x) dx\\
+	&\underset{ipp}{=} \left[f(x) \varphi(x)\right]_{-\infty}^{\infty} - \int_\ens{R} f(x) \varphi(x) dx\\
+	&= -\int_\ens{R} f(x) \varphi(x) dx\\
+	\langle [f]', \varphi \rangle &= \langle [f], \varphi' \rangle
+\end{align*}
+
+\subsection{Définition est exemple}
+
+\paragraph{Définition 2.1} Dérivation dans \D'
+
+Si \(T \in \D'\) on définit sa dérivée \(T' \in \D'\) par :
+\[
+	\langle T', \varphi \rangle = - \langle T, \varphi' \rangle \fphi
+\]
+
+\paragraph{Théorème 2.1.} Si \(T \in \D'\) sa dérivée n-ième \(T^{(n)} \in _D'\) est défini par :
+\[
+	\langle T^{(n)}, \varphi \rangle = (-1)^{n} \langle T, \varphi^{(n)} \rangle \fphi
+\]
+
+\paragraph{Exemples} \quad \par 
+
+\[
+	[sgn]' = 2\delta
+\]
+
+\[
+	[cos]' = [sin]
+\]
+La démonstration est trivial et est laissé en exercice au lecteur.
 
 \end{document}
