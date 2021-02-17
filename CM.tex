@@ -289,7 +289,7 @@ Les fonction \(L^1_{loc}\) sont les plus utilisées :
 	\[
 		\langle T, \varphi \rangle = \int_{0}^{+\infty} \varphi(x) dx - \int_{-\infty}^0 \varphi(x) dx
 	\]
-	\item Et beaucoup d'autre fonctions : \(f = |vert \cos \vert, f = ln |vert x \vert\)
+	\item Et beaucoup d'autre fonctions : \(f = \vert \cos \vert, f = ln \vert x \vert\)
 \end{enumerate}
 
 \(f =_{pp} g\) dans \(L^1_{loc} \Leftrightarrow T_f = T_g\) dans \D'
@@ -377,7 +377,7 @@ On établit une formule pour \(d_\lambda T, T \in \D'\), lorsque T est réguliè
 \begin{align*}
 	\langle d_\lambda [f], \varphi \rangle &= \langle \left[d_\lambda f\right], \varphi \rangle\\
 	&= \int_{\ens{R}} d_\lambda f(x) \varphi(x) dx\\
-	&= \int_{\ens{R}} f(\dfrac{x}{\lambda} \varphi(x) dx\\
+	&= \int_{\ens{R}} f(\dfrac{x}{\lambda}) \varphi(x) dx\\
 	& \text{On fait un changement de variable, } y= \dfrac{x}{\lambda}, x = \lambda y, J = \lambda\\
 	&= \int_{\ens{R}} f(y) \varphi (\lambda y) \vert \lambda \vert dy\\
 	&= \int_{\ens{R}} f(y) d_{\frac{1}{\lambda}}\varphi (y) \vert \lambda \vert dy\\
@@ -510,5 +510,78 @@ Si \(T \in \D'\) on définit sa dérivée \(T' \in \D'\) par :
 	[cos]' = [sin]
 \]
 La démonstration est trivial et est laissé en exercice au lecteur.
+
+\begin{center}
+\textbf{CM5 (2021-02-17)}
+\end{center}
+
+\subsection{Cas des fonctions continues par morceaux}
+
+\paragraph{Théorème 2.2} Formule des sauts
+
+Soit f une fonction continue dérivable sauf en n points de discontinuité \(a_1, a_2, \cdots, a_n.\) On suppose que \(a_1, a_2, \cdots, a_n.\) sont des discontinuités de première espèce c'est à dire que le saut en \(a_p\) défini par \(\sigma_p = f(a_p^+) - f(a_p^-)\) est fini.
+
+Alors
+\[
+	[f]' = [f'] + \sum_{p=1}^n \sigma_p \delta_{a_p}
+\]
+
+Ce théorème reste valable dans le cas où \(n = + \infty\)
+
+\paragraph{Exemple :} Fonction rampe
+
+Soit f la fonction rampe suivante : \(f(t) = t \forall t \in [0,1[\) périodique de période 1:
+
+\[
+	[f]' = [f'] + \sum_{p=1}^n \sigma_p \delta_{a_p}
+\]
+
+La fonction est périodique il y a donc une infinité de discontinuité, et \(\forall p, \sigma_p = -1\), de plus \(f'(t) = 1\)
+
+Donc :
+\[
+	[f]' = [1] - \sum_{n = -\infty}^{+\infty} \delta_n 
+\]
+\[
+	[f]' = [1] - \sum_{p \in \ens{Z}} \delta_p
+\]
+\[
+	[f]' = [1] - \dc_1
+\]
+Exercice personnel :
+
+Retrouver ce résultat par calcul direct avec des fonctions test.
+
+\subsection{Propriétés de la dérivation dans \D'}
+
+\paragraph{Théorème 2.3}
+
+\begin{align*}
+	&(S+T)' = S'+T' \quad	\forall S,T \in \D\\
+	&(\lambda T)' = \lambda T' \quad \forall \lambda \in \ens{R} \quad	\forall T \in \D\\
+	&(\tau_a T)' = \tau_a T' \quad \forall a \in \ens{R} \quad	\forall T \in \D\\
+	&(d_a T)' = \frac{1}{a}d_aT' \quad \forall a \in \ens{R} \quad	\forall T \in \D
+\end{align*}
+
+\paragraph{Remarque} \quad \\
+
+C'est la même formule que pour les fonctions
+
+\paragraph{Théorème 2.4} Si \(f \in C^{\infty}\) et \(T \in \D'\) alors dans \(\D'\)
+\[
+	(f\cdot T)' = f' \cdot T + f \cdot T'
+\]
+
+\paragraph{Théorème 2.5}
+
+\[
+	t\delta^{(n)} = -n \delta^{(n-1)} \quad \forall \in \ens{N^\star} 
+\]
+
+\paragraph{Remarque :} On a vu que \(t\delta = 0\) mais \(t\delta' = -\delta\)
+
+\begin{center}
+\textbf{CM6 (2021-02-**)}
+\end{center}
 
 \end{document}
