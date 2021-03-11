@@ -20,10 +20,12 @@
     linkcolor=black, urlcolor=black
 }
 
-\newcommand{\Ens}[1]{\mathbb{#1}}
-\newcommand{\ens}[1]{\mathbb{#1}}
+\newcommand{\Ens}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\ens}[1]{\ensuremath{\mathbb{#1}}}
 \newcommand{\fphi}{\quad \forall \varphi \in \mathcal{D}}
 \newcommand{\D}{\ensuremath{\mathcal{D}}}
+\newcommand{\F}{\ensuremath{\mathcal{F}}}
+\newcommand{\Sf}{\ensuremath{\mathcal{S}}}
 
 \input cyracc.def
 \font\tencyr=wncysc10
@@ -580,8 +582,77 @@ C'est la même formule que pour les fonctions
 
 \paragraph{Remarque :} On a vu que \(t\delta = 0\) mais \(t\delta' = -\delta\)
 
+\chapter{Transformée de Fourier des distributions}
+
 \begin{center}
-\textbf{CM6 (2021-02-**)}
+\textbf{CM6 (2021-03-11)}
 \end{center}
 
+\section{Introduction}
+
+\[
+	\underset{a\rightarrow 0}{lim} \frac{1}{a}\chi_{[-\frac{a}{2}, \frac{a}{2}]} = \delta
+\]
+
+\[
+	\F( \frac{1}{a}\chi_{[-\frac{a}{2}, \frac{a}{2}]}) = \text{sinc} (\pi \nu a)
+\]
+
+\[
+	\langle [\F(f)], \varphi \rangle = 
+\]
+
+Si \(\varphi \in \D\) en général, \(\F(\varphi)\) existe mais n'a pas de support borné.
+
+Il va falloir définir des fonctions test dans un ensemble qui est stable par transformée de Fourier.
+Cet ensemble est \Sf, l'ensemble des fonctions à décroissance rapide. On a vu au semestre 5 que 
+\[
+	\F(\Sf) = \Sf
+\]
+
+\F forme une bijection sur S
+
+\section{L'ensemble des distributions tempérées S'}
+
+\subsubsection{Rappels :}
+
+\begin{enumerate}
+	\item Fonction à décroissance rapide : \(\Sf(\ens{R}\) est l'ensemble des fonction :\(f : \ens{R} \rightarrow \ens{C} \) telle que :
+	\[
+		f \in \ens{C}^\infty(\ens{R}) \quad \text{ et } \quad \forall k, l \in \ens{N}, \underset{x \in \ens{R}}{sup} | x^k f^{(l)}(x) | < +\infty
+	\]
+	\item La transformée de Fourier est une bijection sur \Sf(\ens{R})
+\end{enumerate}
+
+\paragraph{Définition 3.1.} L'ensemble des distributions tempérées est le dual de \Sf noté \Sf' :
+
+\paragraph{Remarque}
+
+\[
+	\D \subset \Sf \quad \text{ et } \quad \Sf' \subset \D'
+\]
+
+\paragraph{Exemples de distributions tempérées}
+
+\begin{enumerate}
+	\item Fonction à croissance lente : Si \(f \in C^\infty (\ens{R}\) telle que \(|f^{(\alpha)} leq |P|\) avec P un polynôme.
+	\item \(\delta \in \S'\)
+	\item \(\dc \in \Sf'\)
+	\item Si P est un polynôme et \(T \in \Sf\) alors \(PT \in \Sf\) avec \(\langle PT, \psi \rangle = \langle T, P \psi \rangle\)
+	\item Les fonction \(L^1\) et \(L^2\) sont dans \Sf'
+	\item Si \(T \in \Sf\) alors \(T' \in \Sf'\)
+	\item Toute distribution périodique est dans \Sf', ce que l'on admettra
+\end{enumerate}
+
+\section{Transformée de Fourier des distributions tempérées}
+
+\paragraph{Définition 3.2.} Soit \(T \in \Sf'\), on définit :
+\[
+	\langle \F(T), \psi \rangle ) \langle T, \F(\psi) \rangle \quad \forall \psi \in \Sf
+\]
+\[
+	\langle \F^{-1}(T), \psi \rangle ) \langle T, \F^{-1}(\psi) \rangle \quad \forall \psi \in \Sf
+\]
+
+\paragraph{Remarque :} \F et \(\F^{-1}\) sont linéaires sur \Sf' :
 \end{document}
