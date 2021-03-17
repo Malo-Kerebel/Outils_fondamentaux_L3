@@ -565,7 +565,7 @@ Retrouver ce résultat par calcul direct avec des fonctions test.
 	&(d_a T)' = \frac{1}{a}d_aT' \quad \forall a \in \ens{R} \quad	\forall T \in \D
 \end{align*}
 
-\paragraph{Remarque} \quad \\
+\paragraph{Remarque} \quad
 
 C'est la même formule que pour les fonctions
 
@@ -624,7 +624,7 @@ Cet ensemble est \Sf, l'ensemble des fonctions à décroissance rapide. On a vu 
 	\item La transformée de Fourier est une bijection sur \Sf(\ens{R})
 \end{enumerate}
 
-\paragraph{Définition 3.1.} L'ensemble des distributions tempérées est le dual de \Sf noté \Sf' :
+\paragraph{Définition 3.1.} L'ensemble des distributions tempérées est le dual de \Sf\\ noté \Sf' :
 
 \paragraph{Remarque}
 
@@ -635,7 +635,7 @@ Cet ensemble est \Sf, l'ensemble des fonctions à décroissance rapide. On a vu 
 \paragraph{Exemples de distributions tempérées}
 
 \begin{enumerate}
-	\item Fonction à croissance lente : Si \(f \in C^\infty (\ens{R}\) telle que \(|f^{(\alpha)} leq |P|\) avec P un polynôme.
+	\item Fonction à croissance lente : Si \(f \in C^\infty (\ens{R}\) telle que \(|f^{(\alpha)} \leq |P|\) avec P un polynôme.
 	\item \(\delta \in \S'\)
 	\item \(\dc \in \Sf'\)
 	\item Si P est un polynôme et \(T \in \Sf\) alors \(PT \in \Sf\) avec \(\langle PT, \psi \rangle = \langle T, P \psi \rangle\)
@@ -655,4 +655,114 @@ Cet ensemble est \Sf, l'ensemble des fonctions à décroissance rapide. On a vu 
 \]
 
 \paragraph{Remarque :} \F et \(\F^{-1}\) sont linéaires sur \Sf' :
+
+\begin{center}
+\textbf{CM7 (2021-03-17)}
+\end{center}
+
+Correctif aux chapitres 1 et 2.
+\[
+	\D : \{ \phi / \phi: \ens{R} \rightarrow \ens{C} \}
+\]
+
+\paragraph{Définition 3.2} Soit \(T \in \Sf'\), on définit :
+\[
+	\langle \F(T), \psi \rangle = \langle T, \F(\psi) \rangle \quad \forall \psi \in \Sf
+\]
+\[
+	\langle \F^{-1}(T), \psi \rangle = \langle T, \F^{-1}(\psi) \rangle \quad \forall \psi \in \Sf
+\]
+
+\F est un bijection de \Sf sur \Sf dont l'inverse est $\F^{-1}$
+
+\paragraph{Remarque :} \F et \F' sont linéaires sur \Sf'
+
+\[
+	\F(\alpha_1 T_1 + \alpha_2 T_2 ) = \alpha_1 \F(T_1) + \alpha_2 \F(T_2) \quad \text{ De même pour } \F^{-1}
+\]
+
+\subsubsection{Exemples de transformée de Fourier de distributions tempérées}
+
+\begin{itemize}
+	\item[(1)] \(\F(\delta) = 1\)
+	\begin{align*}
+		\langle \F(\delta), \psi \rangle &= \langle \delta, \F(\psi) \rangle\\
+		&= \F(\psi)(0) = \int_{\ens{R}} \psi(x) e^{-2\pi \nu x}dx\\
+		&= \int_{\ens{R}} \psi(x) dx\\
+		&= \langle [1], \psi \rangle
+	\end{align*}
+	Donc dans \Sf' \(\F(\delta) = 1\)
+\end{itemize}
+
+\paragraph{Propriétés 3.1} Soit \(T \in \Sf'\) :
+\begin{itemize}
+	\item[(1) \textbf{Dérivée :}]
+	\[
+		\F(T') = 2i\pi\nu \F(T)
+	\]
+	\[
+		\F(T^{(p)}) = (2i\pi\nu)^p \F(T)
+	\]
+	
+	\item[(2) \textbf{Dérivation :}]
+	\[
+		(\F(T))' = -2i\pi \F(xT)
+	\]
+	\[
+		(\F(T))^{(p)} = (-2i\pi)^{p} \F(x^pT)
+	\]
+	
+	\item[(3) \textbf{Translation :}]
+	\[
+		\F(\tau_a T) = e^{-2i\pi\nu a}F(T)
+	\]
+	
+	\item[(4) \textbf{Modulation :}]
+	\[
+		\F(e^{2i\pi\nu a }T) = \tau_a \F(T)
+	\]
+	
+	\item[(5) \textbf{Dilation :}]
+	\[
+		\F(d_{\frac{1}{a}}T) = \dfrac{1}{|a|} d_a \F(T) 
+	\]
+	
+	\item[(6) \textbf{Symétrie :}]
+	\[
+		d_{-1} \F(T) = \F^{-1}(T)
+	\]
+	
+	\item[(7)] 
+	\[
+		\F^{-1}(\F(T)) = \F(\F^{-1}(T))
+	\]
+	
+	\item[(8)] Si \(T\) est paire alors \(\F(T)\) est paire, et \(\F^{-1}(T) = \F(T)\)
+	
+	\item[(9)] Si \(T\) est impaire alors \(\F(T)\) est impaire, et \(\F^{-1}(T) = -\F(T)\)
+	
+	\item[(10)] Si \((T_n)_{n\in\ens{N}}\) converge vers \(T\) dans \(\Sf'\) lorsque \(n\) tend vers l'infini, alors \(\F(T_n)\) converge vers \(\F(T)\). C'est-à-dire que \(\F\) est continue sur \(\Sf'\).
+\end{itemize}
+
+\subsubsection{Exemples de Transformée de Fourrier de distributions tempérées}
+
+\begin{itemize}
+	\item[(1)] \(\F(1) = \delta\)
+	\begin{align*}
+		\langle \F(1), \psi \rangle &= \langle [1], \F(\psi) \rangle\\
+		&= \int_{\ens{R}} \F(\psi)(\nu) d\nu\\
+		&= \cdots\\
+		&= \psi(0)
+	\end{align*}
+	Cette méthode par les fonctions test est trop dure.
+	
+	Autre méthode : On sait que \(\F(\delta) = [1]\), on prend donc \(\F^{-1}\) de chaque côté.
+	\begin{align*}
+		\F(\delta) &= [1]\\
+		\F^{-1}(\F(\delta)) &= \F^{-1}([1])\\
+		\delta &= \F([1])
+	\end{align*}
+	Donc dans \Sf' \(\F(1) = \delta\)
+\end{itemize}
+
 \end{document}
