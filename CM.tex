@@ -260,8 +260,8 @@ Si \(f \in C^{\infty}(\ens{R} \) et \(T\in \D'\) on peut définir la distributio
 
 \paragraph{Exemple :} \(\cos \cdot \delta\)
 
-\(cos \in C^{\infty}\) et \(\delta \in \D'\)
-Pour définir \(\cos \cdot delta\) il faut trouver la valeur de \(\langle \cos \cdot \delta, \varphi \rangle\)
+\(\cos \in C^{\infty}\) et \(\delta \in \D'\)
+Pour définir \(\cos \cdot \delta\) il faut trouver la valeur de \(\langle \cos \cdot \delta, \varphi \rangle\)
 \begin{align*}
 	\langle \cos \cdot \delta, \varphi \rangle &= \langle \delta, \cos \varphi \rangle\\
 	&= (\cos \cdot \varphi)(0)\\
@@ -764,4 +764,117 @@ Correctif aux chapitres 1 et 2.
 	Donc dans \Sf' \(\F(1) = \delta\)
 \end{itemize}
 
+\chapter{Produit de convolution}
+
+\begin{center}
+\textbf{CM8 (2021-04-01)}
+\end{center}
+
+\section{Introduction}
+
+Si on considère deux fonction \(f\) et \(g\) sommables, le produit de convolution de \(f\) par \(g\) est défini par :
+\[
+	h(x) = f*g(x) = \int_{\ens{R}} f(y) g(x-y)dy = \int_\ens{R} g(y) f(x-y)dy
+\]
+
+Et on sait que \(h\) est sommable.
+
+Soit \(\phi \in \D\),
+\begin{align*}
+	\langle [h], \phi \rangle = \int_{\ens{R}} h(x) \phi(x) dx &= \int_\ens{R}\left (\int_\ens{R} f(y) g(x-y) dy \right ) \phi(x) dx\\
+	&= \int_\ens{R}f(y) \left ( \int_\ens{R} g(x-y) \phi(x) dx \right ) dy\\
+	&= \int_\ens{R} f(y)\left ( \int_\ens{R} g(u) \phi(u+y) du\right ) dy\\
+	\langle [f*g], \phi \rangle &= \langle [f(y)], \underbrace{\langle [g(u)],\overbrace{\phi(u+y)}^{u\rightarrow \phi(u+y)}}_{\psi(y)}\rangle\rangle
+\end{align*}
+
+Pour que \([f*g]\) existe il faut que \(\psi \in \D (ou \Sf)\)
+
+Si \(S\) et \(T\) sont dans \D' on va définir
+
+\[
+	\langle S*T, \phi \rangle = \langle S[y], \underbrace{\langle T(u), \phi(y+u)\rangle }_{\in R, fonction~de~y} \rangle
+\]
+
+\section{ Produit de convolution}
+
+\paragraph{Définition 4.1.} Produit de convolution dans \D'
+
+Si \(S,T \in \D'\) on pose :
+\[
+	\langle S*T, \phi \rangle = \langle S[y], \langle T(u), \phi(y+u)\rangle \rangle = \langle T[y], \langle S(u), \phi(y+u)\rangle \rangle
+\]
+
+Si on peut les calculer.
+
+\subsubsection{exemples}
+\begin{enumerate}
+	\item \(\delta_a * \delta_b = \delta_{a+b}\)
+	\begin{align*}
+		\langle \delta_a * \delta_b, \varphi \rangle &= \langle \delta_a(x), \langle \delta_b (y), \varphi(x+y)\rangle\rangle\\
+		&= \langle \delta_a(x), \varphi(x + b) \rangle\\
+		&= \varphi(a+b)
+	\end{align*}
+	
+	Donc on a bien \(\delta_a * \delta_b = \delta_{a+b}\)
+	
+	\item \(\delta * H = H\)
+	\begin{align*}
+		\langle \delta * H, \varphi \rangle &= \langle H(x), \langle \delta (y), \varphi(x+y)\rangle\rangle\\
+		&= \langle H(x), \varphi (x) \rangle\\
+		&= \varphi(x) \chi_{[0, + \infty]}
+		&= H\varphi(x)
+	\end{align*}
+	
+	Donc on a bien \(\delta * H = H\)
+	
+	\item \(\delta_a * H = \tau_a H\)
+	\begin{align*}
+		\langle \delta * H, \varphi \rangle &= \langle H(x), \langle \delta_a (y), \varphi(x+y)\rangle\rangle\\
+		&= \langle H(x), \varphi (x+a) \rangle\\
+		&= \varphi(x+a) \chi_{[0, + \infty]}
+		&= H\varphi(x+a)
+	\end{align*}
+	
+	Donc on a bien \(\delta_a * H = \tau_a H\)
+	
+	\item \(\delta' * H = \delta\)
+	
+	\begin{align*}
+		\langle \delta' * [H], \varphi \rangle &= \langle [H(x)], \langle \delta'(y), \varphi(x+y) \rangle \rangle\\
+		&= \langle [ H(x)], - \langle \delta, \dfrac{d}{dy} (\varphi(x+y)) \rangle \rangle\\
+		&= \langle [H(x)], - \langle \delta(y), \varphi'(x+y)\rangle \rangle\\
+		&= \langle [H(x)], - \varphi'(x) \rangle\\
+		&= \langle [H]', \varphi \rangle
+		&= \langle \delta, \varphi \rangle
+	\end{align*}
+	
+	Donc on a bien \(\delta' * H = \delta\)
+	
+\end{enumerate}
+
+\section{Propriétés}
+
+\begin{center}
+\textbf{CM9 (2021-04-08)}
+\end{center}
+
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
