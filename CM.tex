@@ -821,7 +821,7 @@ Si on peut les calculer.
 	\begin{align*}
 		\langle \delta * H, \varphi \rangle &= \langle H(x), \langle \delta (y), \varphi(x+y)\rangle\rangle\\
 		&= \langle H(x), \varphi (x) \rangle\\
-		&= \varphi(x) \chi_{[0, + \infty]}
+		&= \varphi(x) \chi_{[0, + \infty]}\\
 		&= H\varphi(x)
 	\end{align*}
 	
@@ -831,7 +831,7 @@ Si on peut les calculer.
 	\begin{align*}
 		\langle \delta * H, \varphi \rangle &= \langle H(x), \langle \delta_a (y), \varphi(x+y)\rangle\rangle\\
 		&= \langle H(x), \varphi (x+a) \rangle\\
-		&= \varphi(x+a) \chi_{[0, + \infty]}
+		&= \varphi(x+a) \chi_{[0, + \infty]}\\
 		&= H\varphi(x+a)
 	\end{align*}
 	
@@ -844,7 +844,7 @@ Si on peut les calculer.
 		&= \langle [ H(x)], - \langle \delta, \dfrac{d}{dy} (\varphi(x+y)) \rangle \rangle\\
 		&= \langle [H(x)], - \langle \delta(y), \varphi'(x+y)\rangle \rangle\\
 		&= \langle [H(x)], - \varphi'(x) \rangle\\
-		&= \langle [H]', \varphi \rangle
+		&= \langle [H]', \varphi \rangle\\
 		&= \langle \delta, \varphi \rangle
 	\end{align*}
 	
@@ -857,6 +857,80 @@ Si on peut les calculer.
 \begin{center}
 \textbf{CM9 (2021-04-08)}
 \end{center}
+
+\paragraph{Propriétés 4.1} \quad
+
+Le produit de convolution est commutatif : \( S * T = T * S\)
+
+\paragraph{Propriétés 4.2} \quad
+
+\begin{enumerate}
+
+
+	\item \(\delta\) est l'élément neutre pour * : \(\forall T \in \D' \quad T * \delta = \delta * T = T\)
+
+	(Voir exemple \( H * \delta\), la démonstration est similaire)
+
+	\item \(\left ( S * T \right )' = S' * T = S * T'\)
+	
+	\begin{align*}
+		\langle \left ( S * T \right )', \varphi \rangle &= - \langle S*T, \varphi' \rangle \\
+		&= - \langle S(x), \langle T(y), \varphi'(x+y) \rangle \rangle\\
+		&= - \langle S(x), \langle T(y), \dfrac{d}{dy} \varphi'(x+y) \rangle \rangle\\
+		&= - \langle S(x), - \langle T(y)', \varphi'(x+y) \rangle \rangle\\
+		&= + \langle S(x), + \langle T(y)', \varphi'(x+y) \rangle \rangle\\
+		&= \langle S * T', \varphi \rangle
+	\end{align*}
+
+	\item \(\tau_a ( S * T) = \tau_a S * T = S * \tau_a T\)
+	
+	\item Si \(S * T_1\) et \(S * T_2\) existent alors \(S * \left ( \alpha T_1 + \beta T_2 \right  ) = \alpha S * T_1 + \beta S * T_2\) avec \(\alpha, \beta \in \ens{C}\)
+
+\end{enumerate}
+
+\paragraph{Propriétés 4.3.} (Cas de Dirac)
+
+\begin{enumerate}
+	\item \(T * \delta' = T'\) \begin{align*}
+		\langle T * \delta', \varphi \rangle &= \langle T(x), \langle \delta'(y), \varphi(x+y) \rangle \rangle\\
+		&= \langle T(x), -\varphi' (x+0) \rangle\\
+		&= - \langle T, \varphi \rangle\\
+		&= \langle T', \varphi \rangle
+	\end{align*}
+	
+	\item \(T * \delta^{(n)} = T^{(n)}\)
+	
+	\item \(T * \delta_a = \tau_a T\)
+	(On utilise la propriété 4.2.1 et 4.2.3)
+	
+	\item Périodisation par un peigne de Dirac :\\
+	Soit \(K \in \ens{R}^{+\star}\). Si \(f\) est une fonction nulle en dehors de \(\left [0, K\right ]\), on note \(g\) la fonction de période \(K\) égale à \(f\) sur \(\left [0, K\right ]\). Alors :
+	\[
+		g = f * \dc_K = f * \sum_{n \in \ens{Z}} \delta_n K
+	\]
+	
+	On peut généraliser cela à des fonctions	sur une intervalle \(\left [ a, b \right ]\) quelconque en ajustant la période du peigne de Dirac.
+	
+	\[
+		g = \sum_{n \in \ens{Z}} \tau_{nK} f = \sum_{n \in \ens{Z}} f * \delta_{nK} = f * \sum_{n \in \ens{Z}} \delta_{nK} = f * \dc_K
+	\]
+	
+	\paragraph{Remarque}\quad
+	
+	La produit de convolution par un peigne de Dirac \(\dc\) permet une périodisation.
+	
+	\(f \cdot \dc_K\) permet une discrétisation (prendre les valeurs de la fonction seulement en certains point)
+\end{enumerate}
+
+\paragraph{Propriétés 4.4.} Transformée de Fourrier et produit de convolution
+
+Si \(T \in S'\) et \(f \in S\) alors \(T * [f] \in \S'\) et :
+\[
+	\F(T * [f]) = \F(T) \cdot \F(f)
+\]
+\[
+	\F^{-1}(T * [f]) = \F^{-1}(T) \cdot \F^{-1}(f)
+\]
 
 \end{document}
 
